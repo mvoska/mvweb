@@ -25,9 +25,9 @@ footer a:hover {
 }
 
 .insetImgShadow {
-  -webkit-box-shadow: inset 0px 0px 10px #000
-  -moz-box-shadow: inset 0px 0px 10px #000
-  box-shadow: inset 0px 0px 10px #000
+  -webkit-box-shadow: inset 0px 0px 10px #000;
+  -moz-box-shadow: inset 0px 0px 10px #000;
+  box-shadow: inset 0px 0px 10px #000;
 }
 
 html {
