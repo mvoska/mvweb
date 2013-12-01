@@ -68,4 +68,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-cssmin'
 
-  grunt.registerTask 'default', ['cssmin', 'concat', 'uglify', 'htmlmin', 'copy', 'clean:js', 'watch']
+  grunt.registerTask 'default', ['cssmin', 'concat', 'uglify', 'htmlmin', 'watch']
