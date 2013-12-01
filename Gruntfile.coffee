@@ -48,28 +48,16 @@ module.exports = (grunt) ->
         files:
           "index.html": "templates/index.html"
 
-    copy:
-      all:
-        files: [{expand: true, src: ['img/*'], dest: 'static/', filter: 'isFile'},
-                {expand: true, src: ['font/*'], dest: 'static/', filter: 'isFile'}]
-
-    clean:
-      js: ["static/js/all.js"]
-      res: ["static/font", "static/img"]
-
     watch:
-      less:
-        files: ['static/less/*.less', 'static/less/bootstrap/*.less']
-        tasks: ['less:all']
+      cssmin:
+        files: ['assets/css/*.css']
+        tasks: ['cssmin:all']
       concat:
-        files: ['static/js/src/*.js']
-        tasks: ['concat:all', 'uglify:all', 'clean:js']
+        files: ['assets/js/*.js']
+        tasks: ['concat:all', 'uglify:all']
       htmlmin:
-        files: ['templates/non-minified/*.html']
+        files: ['templates/*.html']
         tasks: ['htmlmin:all']
-      copy:
-        files: ['font/*', 'img/*']
-        tasks: ['clean:res', 'copy:all']
 
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-concat'
