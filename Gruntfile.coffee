@@ -2,89 +2,70 @@ module.exports = (grunt) ->
 
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
-
-    less:
-      all:
-        options:
-          yuicompress: true
+    
+    cssmin:
+      combine:
         files:
-          'dist/css/style.css': 'less/style.less'
-
-    dusthtml:
-      all:
-        options:
-          basePath: 'dust'
-          context: 'dust/context.json'
-        files:
-          [
-            expand: true
-            flatten: true
-            src: ['dust/*.dust']
-            dest: 'dist/'
-            ext: '.html'
-          ]
+          'assets/css/style.min.css':
+            [ 'assets/css/bootstrap.css'
+              'assets/css/bootstrap-responsive.css'
+              'assets/css/main.css'
+              'assets/css/font-awesome.min.css'
+              'assets/css/mv.css'
+            ]
 
     concat:
       options:
         separator: ';'
       all:
         src:
-          [
-            'js/bootstrap.min.js',
-            'js/index.js'
+          [ "assets/js/jquery.js"
+            "assets/js/google-code-prettify/prettify.js"
+            "assets/js/bootstrap-transition.js"
+            "assets/js/bootstrap-modal.js"
+            "assets/js/bootstrap-scrollspy.js"
+            "assets/js/bootstrap-button.js"
+            "assets/js/bootstrap-carousel.js"
+            "assets/js/jquery.localscroll-1.2.7-min.js"
+            "assets/js/jquery.inview.js"
+            "assets/js/jquery.scrollTo-1.4.2-min.js"
+            "assets/js/jquery.parallax-1.1.3.js"
+            "assets/js/index.js"
           ]
         dest:
-          'dist/js/all.js'
+          "assets/js/all.js"
 
     uglify:
       all:
         files:
-          'dist/js/all.min.js': 'dist/js/all.js'
+          "assets/js/all.min.js": "assets/js/all.js"
 
-    copy:
-      img:
+    htmlmin:
+      all:
+        options:
+          removeComments: true,
+          collapseWhitespace: true
         files:
-          [
-            expand: true
-            src: 'img/**/*'
-            dest: 'dist/'
-            filter: 'isFile'
-          ]
-      font:
-        files:
-          [
-            expand: true
-            src: 'font/**/*'
-            dest: 'dist/'
-            filter: 'isFile'
-          ]
-
-    clean:
-      all: ['dist/**/*']
-      font: ['dist/font']
-      img: ['dist/img']
-      js: ['dist/all.js']
+          "index.html": "templates/index.html"
 
     watch:
-      less:
-        files: ['less/*.less', 'less/bootstrap/*.less', 'less/bootstrap/font-awesome/*.less']
-        tasks: ['less:all']
-      dusthtml:
-        files: ['dust/**/*.dust']
-        tasks: ['dusthtml']
-      uglify:
-        files: ['js/*.js']
-        tasks: ['concat', 'uglify', 'clean:js']
-      copy:
-        files: ['font/**/*', 'img/**/*']
-        tasks: ['clean:font', 'clean:img', 'copy']
+      cssmin:
+        files: ['assets/css/*.css']
+        tasks: ['cssmin:all']
+      concat:
+        files: ['assets/js/*.js']
+        tasks: ['concat:all', 'uglify:all']
+      htmlmin:
+        files: ['templates/*.html']
+        tasks: ['htmlmin:all']
 
   grunt.loadNpmTasks 'grunt-contrib-less'
-  grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-contrib-htmlmin'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-clean'
-  grunt.loadNpmTasks 'grunt-dust-html'
+  grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-cssmin'
 
-  grunt.registerTask 'default', ['clean', 'less', 'dusthtml', 'concat', 'uglify', 'clean:js', 'copy', 'watch']
+  grunt.registerTask 'default', ['cssmin', 'concat', 'uglify', 'htmlmin', 'watch']
