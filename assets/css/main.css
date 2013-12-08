@@ -93,7 +93,7 @@ section #header-section {
 
 
 #header-section {
-  background: #222 url(../img/background1.jpg) bottom center repeat fixed;
+  background: #222 url(../img/background1.png) bottom center repeat fixed;
   background-size: 100% 100%;
   height: 650px;
   height: 650px;
@@ -508,7 +508,7 @@ section h3.top{
   width:100%;
   min-height:550px;
   z-index: 200;
-  background:#020403 url(../img/blured.jpg) 50% 0 fixed;
+  background:#020403 url(../img/blured.png) 50% 0 fixed;
 }
 
 .bg{
@@ -534,7 +534,7 @@ section h3.top{
   width:100%;
   max-height:400px;
   z-index: 200;
-  background:#020403 url(../img/blured.jpg) 50% 0 fixed;
+  background:#020403 url(../img/blured.png) 50% 0 fixed;
 }
 
 #team-section, #portfolio-section, #price-section   {
