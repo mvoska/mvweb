@@ -15,6 +15,14 @@ background: url(../img/logo-bg.png) top right no-repeat;
 background-size: 190px 100%;
 }
 
+.press {
+  line-height: 10px;
+}
+.press-text {
+  font-size: 15px;
+  color: #000;
+}
+
 footer a {
   color: #f89406;
 }
