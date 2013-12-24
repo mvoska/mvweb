@@ -56,4 +56,3 @@ $(window).scroll(function () {
     navbartop.addClass("navbar-static-top");
   }
 });
-$('.carousel').carousel()
