@@ -41,6 +41,11 @@ html {
   vertical-align: middle;
 }
 
+.side-project-img {
+  max-width: 300px;
+  min-width: 0 !important;
+  max-height: auto;
+}
 .carousel-inner{
   text-align: center;
 }

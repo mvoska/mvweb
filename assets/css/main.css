@@ -848,9 +848,6 @@ hr {
   -webkit-transition: all 1.6s ease-in-out;
   -ms-transition: all 1.6s ease-in-out;
   transition: all 1.6s ease-in-out;
-  -webkit-box-shadow: 0px 0px 12px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    0px 0px 12px rgba(50, 50, 50, 0.75);
-  box-shadow:         0px 0px 12px rgba(50, 50, 50, 0.75);
 }
 .browser-shot-2.active{
   bottom:-40px;
@@ -875,9 +872,6 @@ hr {
   -webkit-transition: all 1.8s ease-in-out;
   -ms-transition: all 1.8s ease-in-out;
   transition: all 1.8s ease-in-out;
-  -webkit-box-shadow: 0px 0px 12px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    0px 0px 12px rgba(50, 50, 50, 0.75);
-  box-shadow:         0px 0px 12px rgba(50, 50, 50, 0.75);
 }
 .browser-shot-3.active{
   bottom:-40px;
