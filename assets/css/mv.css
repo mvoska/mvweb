@@ -32,12 +32,6 @@ footer a:hover {
   color: #0088cc;
 }
 
-.insetImgShadow {
-  -webkit-box-shadow: inset 0px 0px 10px #000;
-  -moz-box-shadow: inset 0px 0px 10px #000;
-  box-shadow: inset 0px 0px 10px #000;
-}
-
 html {
   -webkit-font-smoothing: antialiased;
 }
@@ -63,4 +57,12 @@ html {
 a:hover {
   color: #f89406;
   text-decoration:none;
+}
+
+@media (max-width: 767px) {
+    .row-fluid .span3, .uneditable-input.span3, .span3, .row-fluid .span6, .uneditable-input.span6, .span6 {
+    max-width: 300px;
+    float: left;
+    margin-left: 15px !important;
+  }
 }
