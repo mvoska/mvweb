@@ -59,6 +59,6 @@ $(window).scroll(function () {
 $('#download-resume').click(function() {
   ga('send', 'event', {
     eventCategory: 'Resume',
-    eventAction: 'View/Download',
+    eventAction: 'View/Download'
   });
 })
