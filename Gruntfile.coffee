@@ -2,7 +2,7 @@ module.exports = (grunt) ->
 
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
-    
+
     cssmin:
       combine:
         files:
@@ -20,12 +20,9 @@ module.exports = (grunt) ->
       all:
         src:
           [ "assets/js/jquery.js"
-            "assets/js/google-code-prettify/prettify.js"
             "assets/js/bootstrap-transition.js"
-            "assets/js/bootstrap-modal.js"
             "assets/js/bootstrap-scrollspy.js"
             "assets/js/bootstrap-button.js"
-            "assets/js/bootstrap-carousel.js"
             "assets/js/jquery.localscroll-1.2.7-min.js"
             "assets/js/jquery.inview.js"
             "assets/js/jquery.scrollTo-1.4.2-min.js"
