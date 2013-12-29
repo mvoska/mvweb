@@ -56,3 +56,9 @@ $(window).scroll(function () {
     navbartop.addClass("navbar-static-top");
   }
 });
+$('#download-resume').click(function() {
+  ga('send', 'event', {
+    eventCategory: 'Resume',
+    eventAction: 'View/Download',
+  });
+})
