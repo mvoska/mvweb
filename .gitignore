@@ -1,6 +1,6 @@
 *node_modules*
 style.min.css
 .DS_Store
-/index.html
+index.html
 all.js
 all.min.js
