@@ -4,14 +4,14 @@ var minifyCSS = require('gulp-minify-css');
 var minifyHTML = require('gulp-minify-html');
 
 gulp.task('styles', function() {
-  gulp.src('./less/style.less')
+  return gulp.src('./less/style.less')
     .pipe(less())
     .pipe(minifyCSS())
     .pipe(gulp.dest('./dist/css/'));
 });
 
 gulp.task('views', function() {
-  gulp.src('index.html')
+  return gulp.src('index.html')
     .pipe(minifyHTML({conditionals:true}))
     .pipe(gulp.dest('./dist/'));
 });
